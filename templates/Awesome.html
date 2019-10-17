@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Awesome - Call It Anything</title>
+        <title>Awesome - SAY WHAT YOU THINK</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -12,10 +12,31 @@
         </style>
     </head>
     <body>
-        <div class="w3-container w3-light-grey w3-padding-32 w3-padding-large" id="contact">
+        <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+            <h3 class="w3-padding-64 w3-center"><b>SAY<br>WHAT<br>YOU<br>THINK</b></h3>
+            <a href="/"  class="w3-bar-item w3-button">HOME</a> 
+            <a href="/Awesome"  class="w3-bar-item w3-button">AWESOME</a> 
+            <a href="/Give"  class="w3-bar-item w3-button">GIVE</a>
+            <a href="/Jinglebells"  class="w3-bar-item w3-button">JINGLEBELLS</a> 
+            <a href="/Ridiculous"  class="w3-bar-item w3-button">RIDICULOUS</a> 
+            <a href="/Programmer"  class="w3-bar-item w3-button">PROGRAMMER</a> 
+            <a href="/Morning"  class="w3-bar-item w3-button">MORNING</a> 
+            <a href="/Cool"  class="w3-bar-item w3-button">COOL</a> 
+            <a href="/Cup"  class="w3-bar-item w3-button">CUP</a> 
+            <a href="/Diabetes"  class="w3-bar-item w3-button">DIABETES</a> 
+            <a href="/Fascinating"  class="w3-bar-item w3-button">FASCINATING</a>
+            <a href="/Thanks"  class="w3-bar-item w3-button">THANKS</a> 
+            <a href="/Maybe"  class="w3-bar-item w3-button">MAYBE</a> 
+            <a href="/Graphs"  class="w3-bar-item w3-button">GRAPHS</a> 
+            <br> 
+        </nav>
+
+        <div class="w3-container w3-dark-grey w3-padding-64 w3-padding-large" style="height: 100%" id="contact">
                 <div class="w3-content" style="max-width:600px">
-                    <h4 class="w3-center"><b>Contact Me</b></h4>
+                    <h4 class="w3-center"><b>Awesome - SAY WHAT YOU THINK</b></h4>
                     <p>{{args.Preview}}</p>
+                    <hr>
+                    <p><font size="3" color="#ff6666">{{errMessage}}</font></p>
                     <form method ="POST" action="/Awesome">
                     <div class="w3-section">
                         <label>Name</label>
@@ -30,8 +51,5 @@
                     </form>
                 </div>
             </div>
-        <form method = "POST" action="/">
-            <input type="submit" name="back_button" value="Back">
-        </form>
     </body>
 </html>

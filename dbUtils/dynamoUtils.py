@@ -26,13 +26,11 @@ class DynamoUtils:
 
     @classmethod
     def registerUser(cls, email, passwd):
-        # item = cls.dynamodb.get_item(TableName=cls.loginTable, Key={'Option': {'S': option}})
-        # newTotal = int(item['Item']['Total']['N']) + 1
         cls.dynamodb.put_item(
             TableName = cls.loginTable,
             Item = {
                     'user_email': {'S': email},
-                    'password': {'N': passwd}
+                    'password': {'S': passwd}
             }
         )
 

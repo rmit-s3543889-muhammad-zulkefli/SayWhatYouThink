@@ -16,15 +16,10 @@
             <h1 class="w3-center"><b>Say What You Think</b></h1>
         </div>
         <div class="w3-content" style="max-width:600px">
-            <h4>Welcome to 'Say What You Think'!!!</h4>
-            <h4>
-                This is a fun emailing service tool that allows you to email funny messages to friends and family
-                and other people you hate.
-            </h4>
             <hr>
-            <h4 style= "font-weight: bold;">Login</h4>
+            <h4 style= "font-weight: bold;">Register</h4>
             <p><font size="3" color="red">{{message}}</font></p>
-            <form method ="POST" action="/login">
+            <form method ="POST" action="/Register">
             <div class="w3-section">
                 <label>Email</label>
                 <input class="w3-input w3-border" type="text" name="email">
@@ -33,11 +28,11 @@
                 <label>Password</label>
                 <input class="w3-input w3-border" type="password" name="passwd">
             </div>
-            <input type="submit" name="submit_button" value="Login" class="w3-button w3-block w3-black w3-margin-bottom">
+            <input type="submit" name="submit_button" value="Register" class="w3-button w3-block w3-black w3-margin-bottom">
             </form>
-            <a href="/Register">
-                <input type="button" value="Register" />
-            </a>
+            <form method ="POST" action="/">
+                <input type="submit" name="submit_button" value="Back">
+            </form>
         </div>
     </body>
 </html>

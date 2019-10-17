@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Graphs - SAY WHAT YOU THINK</title>
+        <title>GRidiculous - SAY WHAT YOU THINK</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -10,42 +10,6 @@
         .w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
         .w3-third img:hover{opacity: 1}
         </style>
-        <!--Load the AJAX API-->
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-
-        // Load the Visualization API and the corechart package.
-        google.charts.load('current', {'packages':['corechart']});
-
-        // Set a callback to run when the Google Visualization API is loaded.
-        google.charts.setOnLoadCallback(drawChart);
-
-        // Callback that creates and populates a data table,
-        // instantiates the pie chart, passes in the data and
-        // draws it.
-        function drawChart() {
-
-          // Create the data table.
-          var data = new google.visualization.DataTable();
-          data.addColumn('string', 'Option');
-          data.addColumn('number', 'Popularity');
-          data.addRows([
-          {% for item in items %}
-          ['{{item.Option}}', {{item.Total}}],
-          {% endfor %}
-          ]);
-          // Set chart options
-          var options = {'title':'Popularity of each option',
-                        'width':600,
-                        'height':550,
-                        'legend': 'none',
-                        'colors': ['#A0D100']};
-
-          // Instantiate and draw our chart, passing in some options.
-          var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-          chart.draw(data, options);
-        }
-        </script>
     </head>
     <body>
         <nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
@@ -64,15 +28,27 @@
             <a href="/Thanks"  class="w3-bar-item w3-button">THANKS</a> 
             <a href="/Maybe"  class="w3-bar-item w3-button">MAYBE</a> 
             <a href="/Graphs"  class="w3-bar-item w3-button">GRAPHS</a>
-            <br> 
+            <br>
         </nav>
-
         <div class="w3-container w3-dark-grey w3-padding-64 w3-padding-large" style="height: 100%" id="contact">
-          <div class="w3-content" style="max-width:600px">
-            <h4 class="w3-center"><b>Graphs</b></h4>
-            <!--Div that will hold the pie chart-->
-            <div id="chart_div"></div>
-          </div>
-        </div>
+                <div class="w3-content" style="max-width:600px">
+                    <h4 class="w3-center"><b>Ridiculous - SAY WHAT YOU THINK</b></h4>
+                    <p>{{args.Preview}}</p>
+                    <hr>
+                    <p><font size="3" color="#ff6666">{{errMessage}}</font></p>
+                    <form method ="POST" action="/Ridiculous">
+                    <div class="w3-section">
+                        <label>Name</label>
+                        <input class="w3-input w3-border" type="text" name="name" value={{args.Name}}>
+                    </div>
+                    <div class="w3-section">
+                        <label>Email</label>
+                        <input class="w3-input w3-border" type="text" name="email"  value={{args.Email}}>
+                    </div>
+                    <input type="submit" name="submit_button" value="Preview" class="w3-button w3-block w3-black w3-margin-bottom">
+                    <input type="submit" name="submit_button" value="Send" class="w3-button w3-block w3-black w3-margin-bottom">
+                    </form>
+                </div>
+            </div>
     </body>
 </html>
