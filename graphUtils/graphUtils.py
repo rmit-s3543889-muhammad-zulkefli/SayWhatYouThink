@@ -9,7 +9,6 @@ class GraphUtils:
         for item in items:
             units.append({'Option':item['Option']['S'], 'Total': int(item['Total']['N'])})
 
-        # itemDict = {'items': units}
         return units
 
 
